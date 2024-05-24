@@ -10,8 +10,8 @@ package www.laboratorio6p2_salvadormacias;
  */
 public class normal extends usuario {
 
-    private int transferenciasGratisRestantes = 5;
-    private static final double COSTO_TRANSFERENCIA_EXTRA = 35.0;
+    private int trans_gratis = 5;
+    private static final double trans_pagada = 35.0;
 
     public normal() {
     }
@@ -22,7 +22,7 @@ public class normal extends usuario {
 
     
     public int getTransferenciasGratisRestantes() {
-        return transferenciasGratisRestantes;
+        return trans_gratis;
     }
 
     @Override

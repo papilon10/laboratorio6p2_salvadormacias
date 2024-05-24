@@ -185,6 +185,11 @@ public class principal extends javax.swing.JFrame {
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 70, 60));
 
         jButton2.setText("1");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 70, 50));
 
         jButton3.setText("4");
@@ -304,6 +309,11 @@ public class principal extends javax.swing.JFrame {
 
         jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jButton14.setText("Depositar");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
         jPanel5.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
         javax.swing.GroupLayout frame_depositoLayout = new javax.swing.GroupLayout(frame_deposito.getContentPane());
@@ -395,7 +405,7 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_transferirActionPerformed
 
     private void boton_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_sesionMouseClicked
-        /* if (lista_usuarios.contains(text_usuario.getText())) {
+        /*if (lista_usuarios.contains(text_usuario.getText())) {
 
             this.setVisible(false);
             text_usuario.setText("");
@@ -407,7 +417,8 @@ public class principal extends javax.swing.JFrame {
         } else {
             System.out.println("para ingresar al menu de opciones primero cree un usuario...");
 
-        }*/
+        }
+         */
         this.setVisible(false);
         text_usuario.setText("");
         jPasswordField1.setText("");
@@ -443,6 +454,16 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_boton_depositarMouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        String y= text_cantidadDepositar.getText();
+        usuario x = new normal();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -474,34 +495,33 @@ public class principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new principal().setVisible(true);
-                /*boolean salida = false;
-                do {
-                    System.out.println("Menu: ");
-                    System.out.println("1. crear usuario normal ");
-                    System.out.println("2. crear usuario premium ");
-                    System.out.println("3. salir");
-                    int opcion = lea.nextInt();
-                    switch (opcion) {
-                        case 1: {
-                            crear_normal();
-                        }
-
-                        break;
-                        case 2: {
-                            crear_premium();
-                        }
-                        break;
-                        case 3: {
-                            salida = true;
-                            System.out.println("se abandonara el programa");
-                        }
-                        break;
-                        default:
-                            System.out.println("opcion ingresada es invalida...");
+                boolean salida = false;
+                // do {
+                System.out.println("Menu: ");
+                System.out.println("1. crear usuario normal ");
+                System.out.println("2. crear usuario premium ");
+                System.out.println("3. salir");
+                int opcion = lea.nextInt();
+                switch (opcion) {
+                    case 1: {
+                        crear_normal();
                     }
 
-                } while (salida != true);*/
+                    break;
+                    case 2: {
+                        crear_premium();
+                    }
+                    break;
+                    case 3: {
+                        salida = true;
+                        System.out.println("se abandonara el programa");
+                    }
+                    break;
+                    default:
+                        System.out.println("opcion ingresada es invalida...");
+                }
 
+                // } while (salida != true);
             }
         });
     }
